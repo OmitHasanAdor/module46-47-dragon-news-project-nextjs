@@ -15,6 +15,6 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ['/career','/news:path'],  /*ekadhik route er jonno proxy korte chaile array te path gula dite hobe */
+  matcher: ['/career', '/news/:path*'],  /*ekadhik route er jonno proxy korte chaile array te path gula dite hobe */
 //   matcher: '/career',
 }
