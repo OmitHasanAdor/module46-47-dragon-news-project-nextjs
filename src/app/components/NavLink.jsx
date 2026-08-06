@@ -2,17 +2,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const NavLink = ({ href, children }) => {
+    const pathname = usePathname();
+    const isActive = pathname === href;
 
-const NavLink = ({href, children}) => {
-    const pathname=usePathname()
-    // console.log(pathname,href)
-    // const isActive=pathname === href
     return (
-        <div>
-            <Link href={href} className={` ${pathname === href ? 'border-b-2 border-purple-500 pb-2' : ''}`}>
-                {children}
-            </Link>
-        </div>
+        <Link
+            href={href}
+            className={`transition-colors duration-200 hover:text-blue-900 ${
+                isActive ? 'text-blue-900 font-semibold border-b-2 border-blue-900 pb-1' : 'text-gray-600'
+            }`}
+        >
+            {children}
+        </Link>
     );
 };
 
