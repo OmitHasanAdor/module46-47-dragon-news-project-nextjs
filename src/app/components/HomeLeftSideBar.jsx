@@ -33,7 +33,7 @@ const HomeLeftSideBar = ({ categories, activeId }) => {
     return (
         <>
             {/* Mobile: category trigger button */}
-            <div className="md:hidden col-span-1 mb-2">
+            <div className="lg:hidden col-span-1 mb-2">
                 <button
                     onClick={() => setDrawerOpen(true)}
                     className="w-full flex items-center gap-2 bg-white border border-gray-200 rounded-md px-4 py-3 font-semibold text-gray-700"
@@ -46,14 +46,14 @@ const HomeLeftSideBar = ({ categories, activeId }) => {
             </div>
 
             {/* Desktop: static sticky sidebar */}
-            <div className="hidden md:block bg-white p-4 col-span-1 rounded-md md:sticky md:top-20 md:self-start md:max-h-[calc(100vh-6rem)] md:overflow-y-auto">
+            <div className="hidden lg:block bg-white p-4 col-span-1 rounded-md lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
                 <h2 className="p-2 font-bold text-2xl lg:text-3xl">All Categories</h2>
                 <CategoryList categories={categories} activeId={activeId} />
             </div>
 
             {/* Mobile: drawer overlay */}
             {drawerOpen && (
-                <div className="md:hidden fixed inset-0 z-60 flex">
+                <div className="lg:hidden fixed inset-0 z-60 flex">
                     <div
                         className="absolute inset-0 bg-black/40"
                         onClick={() => setDrawerOpen(false)}
